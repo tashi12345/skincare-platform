@@ -9,26 +9,12 @@ import { BRAND_CONFIG } from "@/data/config";
 import styles from "./Login.module.css";
 
 export default function AdminLogin() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
-    const handleLogin = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoading(true);
-        setError("");
-
-        try {
-            await signInWithEmailAndPassword(auth, email, password);
-            router.push("/admin/dashboard");
-        } catch (err: any) {
-            setError("Invalid credentials. Please try again.");
-            console.error(err);
-        } finally {
-            setLoading(false);
-        }
+    // DEMO MODE: Skip login and go directly to dashboard
+    // For production clients, re-enable the authentication form below
+    const handleDemoAccess = () => {
+        router.push("/admin/dashboard");
     };
 
     return (
@@ -40,6 +26,33 @@ export default function AdminLogin() {
                     <p>{BRAND_CONFIG.clinicName} Management</p>
                 </div>
 
+                <div className={styles.form}>
+                    <div style={{
+                        background: 'rgba(212, 175, 55, 0.1)',
+                        border: '1px solid rgba(212, 175, 55, 0.3)',
+                        padding: '16px',
+                        borderRadius: '12px',
+                        marginBottom: '24px',
+                        textAlign: 'center'
+                    }}>
+                        <p style={{ color: 'var(--primary)', fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>
+                            🎯 DEMO MODE
+                        </p>
+                        <p style={{ color: 'var(--text-muted)', fontSize: '13px' }}>
+                            Authentication is disabled for template demo. Access the full admin dashboard to explore all features.
+                        </p>
+                    </div>
+
+                    <button onClick={handleDemoAccess} className={styles.loginBtn}>
+                        Access Admin Dashboard (Demo)
+                    </button>
+
+                    <p style={{ color: 'var(--text-muted)', fontSize: '12px', textAlign: 'center', marginTop: '16px' }}>
+                        Authentication will be enabled when deployed for actual clients
+                    </p>
+                </div>
+
+                {/* PRODUCTION VERSION - Uncomment for actual clients:
                 <form onSubmit={handleLogin} className={styles.form}>
                     <div className={styles.inputGroup}>
                         <label><Mail size={16} /> Email Address</label>
@@ -69,6 +82,7 @@ export default function AdminLogin() {
                         {loading ? "Authenticating..." : "Login to Dashboard"}
                     </button>
                 </form>
+                */}
             </div>
         </div>
     );

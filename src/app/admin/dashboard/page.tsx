@@ -22,17 +22,14 @@ interface Appointment {
 }
 
 export default function AdminDashboard() {
-    const { profile, isAdmin, logout } = useAuth();
+    const { logout } = useAuth();
     const router = useRouter();
     const [appointments, setAppointments] = useState<Appointment[]>([]);
     const [tab, setTab] = useState<"dashboard" | "appointments" | "messages">("dashboard");
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        if (profile && !isAdmin) {
-            router.push("/");
-        }
-    }, [profile, isAdmin, router]);
+    // DEMO MODE: Authentication disabled for template demo
+    // Re-enable authentication when deploying for actual clients
 
     useEffect(() => {
         if (!db) return;
