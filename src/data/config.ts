@@ -1,7 +1,7 @@
 export const BRAND_CONFIG = {
   // Business Info
-  clinicName: "Dr. Farah's Clinic",
-  tagline: "Skin & Laser Specialist",
+  clinicName: "The Beauty Aesthetic's & Lounge",
+  tagline: "Premium Skin Care & Beauty Services",
   city: "Lahore",
 
   // Contact
@@ -11,8 +11,8 @@ export const BRAND_CONFIG = {
   whatsapp: "923209441775", // Without + for WhatsApp URL
 
   // Social
-  facebook: "https://facebook.com/drfarahsclinic",
-  instagram: "@drfarahsclinic",
+  facebook: "https://facebook.com/beautyaestheticslounge",
+  instagram: "@beautyaestheticslounge",
 
   // Theme Colors (Soft Pink & Purple)
   colors: {
@@ -32,8 +32,8 @@ export const BRAND_CONFIG = {
 
   // SEO
   seo: {
-    title: "Dr. Farah's Clinic | Skin & Laser Specialist in Lahore",
-    description: "Expert skin care and laser treatments in Lahore. Hydra facial, laser hair removal, anti-aging, acne treatment, and more. Professional dermatology services.",
-    keywords: ["skin care lahore", "laser treatment lahore", "dermatologist lahore", "hydra facial", "laser hair removal", "dr farah clinic"]
+    title: "The Beauty Aesthetic's & Lounge | Premium Skin Care in Lahore",
+    description: "Premium beauty and skin care services in Lahore. Hydra facial, laser hair removal, anti-aging, acne treatment, and more. Professional aesthetic treatments.",
+    keywords: ["beauty lounge lahore", "skin care lahore", "laser treatment lahore", "aesthetic clinic lahore", "hydra facial", "laser hair removal"]
   }
 };
