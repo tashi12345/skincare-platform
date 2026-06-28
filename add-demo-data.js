@@ -23,58 +23,58 @@ async function addDemoData() {
     // Demo Appointments
     const appointments = [
       {
-        name: "Ali Raza",
-        email: "ali.raza@example.com",
+        name: "Sana Ahmed",
+        email: "sana.ahmed@example.com",
         phone: "+92 300 1234567",
-        serviceName: "Teeth Cleaning",
+        serviceName: "Hydra Facial",
         date: "2026-07-02",
         timeSlot: "10:00 AM",
         status: "confirmed",
-        notes: "First time patient, please be gentle",
+        notes: "First time treatment, excited to try hydra facial",
         createdAt: Timestamp.fromDate(new Date('2026-06-25'))
       },
       {
-        name: "Sara Ahmed",
-        email: "sara.ahmed@example.com",
+        name: "Maria Khan",
+        email: "maria.khan@example.com",
         phone: "+92 321 9876543",
-        serviceName: "Teeth Whitening",
+        serviceName: "Laser Hair Removal",
         date: "2026-07-03",
         timeSlot: "2:00 PM",
         status: "pending",
-        notes: "Interested in professional whitening treatment",
+        notes: "Want laser treatment for underarms",
         createdAt: Timestamp.fromDate(new Date('2026-06-26'))
       },
       {
-        name: "Hassan Malik",
-        email: "hassan.malik@example.com",
+        name: "Hina Tariq",
+        email: "hina.tariq@example.com",
         phone: "+92 333 4567890",
-        serviceName: "Root Canal",
+        serviceName: "Acne Treatment",
         date: "2026-07-05",
         timeSlot: "11:00 AM",
         status: "confirmed",
-        notes: "Experiencing tooth pain on lower left molar",
+        notes: "Struggling with acne for 2 years, need professional help",
         createdAt: Timestamp.fromDate(new Date('2026-06-27'))
       },
       {
-        name: "Fatima Khan",
-        email: "fatima.khan@example.com",
+        name: "Zainab Malik",
+        email: "zainab.malik@example.com",
         phone: "+92 345 1122334",
-        serviceName: "Braces Consultation",
+        serviceName: "PRP Microneedling",
         date: "2026-06-30",
         timeSlot: "3:00 PM",
         status: "confirmed",
-        notes: "Daughter needs braces, wants to discuss options",
+        notes: "Interested in anti-aging treatment",
         createdAt: Timestamp.fromDate(new Date('2026-06-23'))
       },
       {
-        name: "Usman Tariq",
-        email: "usman.tariq@example.com",
+        name: "Ayesha Raza",
+        email: "ayesha.raza@example.com",
         phone: "+92 301 5566778",
-        serviceName: "Dental Checkup",
+        serviceName: "Dermatology Consultation",
         date: "2026-07-01",
-        timeSlot: "9:00 AM",
+        timeSlot: "12:00 PM",
         status: "confirmed",
-        notes: "Regular checkup, no issues",
+        notes: "Skin consultation for pigmentation issues",
         createdAt: Timestamp.fromDate(new Date('2026-06-24'))
       }
     ];
@@ -89,26 +89,26 @@ async function addDemoData() {
     // Demo Contact Messages
     const messages = [
       {
-        name: "Ahmed Hussain",
-        email: "ahmed.h@example.com",
+        name: "Nida Hassan",
+        email: "nida.h@example.com",
         phone: "+92 312 9988776",
-        message: "Hi, I'm interested in getting dental implants. What is the cost and procedure? Can I schedule a consultation?",
+        message: "Hi, I'm interested in skin brightening treatment. What are the available options and cost? Can I schedule a consultation with Dr. Farah?",
         read: false,
         createdAt: Timestamp.fromDate(new Date('2026-06-27'))
       },
       {
-        name: "Zainab Farooq",
-        email: "zainab.f@example.com",
+        name: "Rabia Farooq",
+        email: "rabia.f@example.com",
         phone: "+92 334 7766554",
-        message: "Do you offer emergency dental services? I have a severe toothache and need immediate attention.",
+        message: "Do you offer chemical peels for acne scars? I have some stubborn acne marks that I want to get rid of.",
         read: true,
         createdAt: Timestamp.fromDate(new Date('2026-06-26'))
       },
       {
-        name: "Bilal Sheikh",
-        email: "bilal.sheikh@example.com",
+        name: "Maham Sheikh",
+        email: "maham.sheikh@example.com",
         phone: "+92 300 4455667",
-        message: "I would like to know more about your teeth whitening packages. What are the prices and how long does the treatment take?",
+        message: "I would like to know more about your laser hair removal packages. What are the prices and how many sessions are required?",
         read: false,
         createdAt: Timestamp.fromDate(new Date('2026-06-28'))
       }
@@ -122,6 +122,7 @@ async function addDemoData() {
     console.log('\n🎉 Demo data added successfully!\n');
     console.log('Visit your admin dashboard to see the data:');
     console.log('https://dentist-platform-six.vercel.app/admin/login\n');
+    console.log('Note: This deployed to the same Vercel URL but with skincare content.');
 
     process.exit(0);
 
