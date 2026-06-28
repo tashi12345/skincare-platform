@@ -32,11 +32,11 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <h2 style={{ fontSize: 'clamp(32px, 5vw, 42px)', marginBottom: '16px', textAlign: 'center', fontWeight: 800 }}>
-            Our <span className="gradient-text">Dental Services</span>
+            Our <span className="gradient-text">Skin Care Treatments</span>
           </h2>
 
           <p style={{ color: 'var(--text-muted)', textAlign: 'center', maxWidth: '600px', margin: '0 auto 60px', fontSize: '18px' }}>
-            Comprehensive dental care with state-of-the-art technology and experienced professionals
+            Advanced dermatology and laser treatments with latest technology and experienced specialists
           </p>
         </motion.div>
 
@@ -78,9 +78,9 @@ export default function Home() {
             gap: '40px'
           }}>
             {[
-              { title: "Certified Dentists", desc: "Highly qualified and experienced dental professionals" },
-              { title: "Modern Equipment", desc: "Latest technology for precise and painless treatments" },
-              { title: "Affordable Rates", desc: "Quality dental care at competitive prices" },
+              { title: "Expert Dermatologist", desc: "Highly qualified skin specialist with years of experience" },
+              { title: "Advanced Technology", desc: "Latest laser and skincare equipment for best results" },
+              { title: "Affordable Packages", desc: "Quality skin care treatments at competitive prices" },
               { title: "Flexible Hours", desc: `${BRAND_CONFIG.hours.weekdays} | ${BRAND_CONFIG.hours.saturday}` }
             ].map((service, i) => (
               <div key={i} className="premium-card" style={{ padding: '32px', textAlign: 'center' }}>
@@ -116,25 +116,25 @@ export default function Home() {
           }}>
             {[
               {
-                name: "Ayesha Khan",
-                treatment: "Teeth Whitening",
-                text: "Amazing experience! The staff was so professional and caring. My teeth look brilliant now. Highly recommend!",
+                name: "Sana Ahmed",
+                treatment: "Hydra Facial",
+                text: "My skin has never looked better! Dr. Farah's hydra facial treatment gave me amazing glow. Highly professional service!",
                 rating: 5,
                 image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
               },
               {
-                name: "Ahmed Hassan",
-                treatment: "Root Canal",
-                text: "I was nervous about the root canal but Dr. made it completely painless. Great clinic with modern equipment.",
-                rating: 5,
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
-              },
-              {
-                name: "Fatima Malik",
-                treatment: "Dental Checkup",
-                text: "Very clean facility and friendly staff. The dentist explained everything clearly. Will definitely come back!",
+                name: "Maria Khan",
+                treatment: "Laser Hair Removal",
+                text: "Best decision ever! The laser hair removal was painless and results are fantastic. Dr. Farah is amazing!",
                 rating: 5,
                 image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
+              },
+              {
+                name: "Hina Tariq",
+                treatment: "Acne Treatment",
+                text: "Finally found a solution to my acne problem! Professional treatment with visible results. Thank you Dr. Farah!",
+                rating: 5,
+                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop"
               }
             ].map((testimonial, i) => (
               <motion.div
@@ -182,10 +182,10 @@ export default function Home() {
             gap: '24px'
           }}>
             {[
-              "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=800&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1609107683888-1c6c40fbd2c7?q=80&w=800&auto=format&fit=crop"
+              "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=800&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop"
             ].map((img, i) => (
               <motion.div
                 key={i}
@@ -219,7 +219,7 @@ export default function Home() {
           <div>
             <h3 style={{ marginBottom: '20px', letterSpacing: '1px', fontSize: '18px' }}>{BRAND_CONFIG.clinicName.toUpperCase()}</h3>
             <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>
-              Professional dental care in {BRAND_CONFIG.city}. {BRAND_CONFIG.tagline}
+              Professional skin care in {BRAND_CONFIG.city}. {BRAND_CONFIG.tagline}
             </p>
           </div>
           <div>

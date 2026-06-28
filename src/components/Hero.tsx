@@ -18,7 +18,7 @@ const Hero = () => {
                         transition={{ duration: 0.8 }}
                         className={styles.title}
                     >
-                        Professional <span className="gradient-text">Dental Care</span> <br />
+                        Expert <span className="gradient-text">Skin Care</span> <br />
                         in <span className={styles.highlight}>{BRAND_CONFIG.city}</span>
                     </motion.h1>
 
@@ -28,8 +28,8 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className={styles.subtitle}
                     >
-                        Experience world-class dental treatment with the latest technology.
-                        From routine checkups to advanced cosmetic procedures.
+                        Advanced dermatology and laser treatments for radiant, healthy skin.
+                        From acne solutions to anti-aging treatments, we've got you covered.
                     </motion.p>
 
                     <motion.div

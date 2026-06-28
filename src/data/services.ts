@@ -11,63 +11,83 @@ export interface Service {
 
 export const SERVICES_DATA: Service[] = [
   {
-    id: 'teeth-cleaning',
-    name: 'Teeth Cleaning',
-    category: 'Preventive',
-    price: 3000,
-    duration: '30 min',
-    description: 'Professional teeth cleaning and polishing to remove plaque and tartar buildup',
+    id: 'laser-hair-removal',
+    name: 'Laser Hair Removal',
+    category: 'Laser Treatment',
+    price: 8000,
+    duration: '45 min',
+    description: 'Advanced laser technology for permanent hair reduction. Safe, effective, and suitable for all skin types',
+    icon: 'Zap',
+    available: true
+  },
+  {
+    id: 'hydra-facial',
+    name: 'Hydra Facial',
+    category: 'Facial Treatment',
+    price: 12000,
+    duration: '60 min',
+    description: 'Deep cleansing and hydrating facial treatment. Reduces dark patches, pigmentation, and gives you glowing skin',
+    icon: 'Droplet',
+    available: true
+  },
+  {
+    id: 'chemical-peel',
+    name: 'Chemical Peel',
+    category: 'Facial Treatment',
+    price: 6000,
+    duration: '40 min',
+    description: 'Exfoliating treatment to improve skin texture, reduce acne scars, and brighten complexion',
     icon: 'Sparkles',
     available: true
   },
   {
-    id: 'root-canal',
-    name: 'Root Canal Treatment',
-    category: 'Restorative',
-    price: 15000,
-    duration: '90 min',
-    description: 'Advanced endodontic therapy to save infected or damaged teeth',
+    id: 'botox-fillers',
+    name: 'Botox & Fillers',
+    category: 'Anti-Aging',
+    price: 25000,
+    duration: '30 min',
+    description: 'Non-surgical cosmetic treatment to reduce wrinkles and restore facial volume',
+    icon: 'Syringe',
+    available: true
+  },
+  {
+    id: 'acne-treatment',
+    name: 'Acne Treatment',
+    category: 'Medical',
+    price: 5000,
+    duration: '30 min',
+    description: 'Comprehensive acne treatment including medication, chemical peels, and laser therapy',
     icon: 'Heart',
     available: true
   },
   {
-    id: 'dental-checkup',
-    name: 'Dental Checkup',
-    category: 'Preventive',
-    price: 2000,
-    duration: '20 min',
-    description: 'Comprehensive oral examination and consultation',
-    icon: 'Search',
-    available: true
-  },
-  {
-    id: 'braces',
-    name: 'Braces Installation',
-    category: 'Orthodontics',
-    price: 80000,
+    id: 'prp-therapy',
+    name: 'PRP Microneedling',
+    category: 'Anti-Aging',
+    price: 15000,
     duration: '60 min',
-    description: 'Metal or ceramic braces for teeth alignment and straightening',
-    icon: 'Smile',
-    available: true
-  },
-  {
-    id: 'tooth-extraction',
-    name: 'Tooth Extraction',
-    category: 'Surgery',
-    price: 5000,
-    duration: '30 min',
-    description: 'Safe and painless tooth removal procedure',
-    icon: 'Trash2',
-    available: true
-  },
-  {
-    id: 'teeth-whitening',
-    name: 'Teeth Whitening',
-    category: 'Cosmetic',
-    price: 12000,
-    duration: '45 min',
-    description: 'Professional teeth whitening for a brighter, confident smile',
+    description: 'Platelet-Rich Plasma therapy for skin rejuvenation, hair growth, and reducing fine lines',
     icon: 'Stars',
+    available: true
+  },
+  {
+    id: 'skin-whitening',
+    name: 'Skin Brightening',
+    category: 'Treatment',
+    price: 10000,
+    duration: '50 min',
+    description: 'Safe skin brightening treatment using glutathione injections and topical solutions',
+    icon: 'Sun',
+    available: true
+  },
+  {
+    id: 'consultation',
+    name: 'Dermatology Consultation',
+    category: 'Consultation',
+    price: 2500,
+    duration: '20 min',
+    description: 'Expert consultation with dermatologist for skin concerns and treatment planning',
+    icon: 'Search',
     available: true
   }
 ];

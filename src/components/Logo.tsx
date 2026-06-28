@@ -15,34 +15,29 @@ const Logo: React.FC<LogoProps> = ({ size = 32, className = '' }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Crown Base */}
-      <path
-        d="M10 40 L10 48 C10 50 11 52 13 52 L51 52 C53 52 54 50 54 48 L54 40 Z"
-        fill="currentColor"
-      />
+      {/* Lotus Flower - Top Petals */}
+      <ellipse cx="32" cy="20" rx="8" ry="12" fill="#ec4899" opacity="0.8"/>
+      <ellipse cx="32" cy="20" rx="8" ry="12" fill="#ec4899" opacity="0.8" transform="rotate(60 32 32)"/>
+      <ellipse cx="32" cy="20" rx="8" ry="12" fill="#ec4899" opacity="0.8" transform="rotate(120 32 32)"/>
 
-      {/* Crown Points */}
-      <path
-        d="M8 40 L12 28 L18 36 L24 20 L32 36 L40 20 L46 36 L52 28 L56 40 Z"
-        fill="currentColor"
-      />
+      {/* Middle Petals */}
+      <ellipse cx="32" cy="24" rx="10" ry="14" fill="#f9a8d4" opacity="0.7" transform="rotate(30 32 32)"/>
+      <ellipse cx="32" cy="24" rx="10" ry="14" fill="#f9a8d4" opacity="0.7" transform="rotate(90 32 32)"/>
+      <ellipse cx="32" cy="24" rx="10" ry="14" fill="#f9a8d4" opacity="0.7" transform="rotate(150 32 32)"/>
 
-      {/* Decorative Circles */}
-      <circle cx="12" cy="28" r="2.5" fill="#10b981" />
-      <circle cx="24" cy="20" r="3" fill="#10b981" />
-      <circle cx="32" cy="36" r="2.5" fill="#10b981" />
-      <circle cx="40" cy="20" r="3" fill="#10b981" />
-      <circle cx="52" cy="28" r="2.5" fill="#10b981" />
+      {/* Outer Petals */}
+      <ellipse cx="32" cy="28" rx="12" ry="16" fill="#a855f7" opacity="0.6"/>
+      <ellipse cx="32" cy="28" rx="12" ry="16" fill="#a855f7" opacity="0.6" transform="rotate(72 32 32)"/>
+      <ellipse cx="32" cy="28" rx="12" ry="16" fill="#a855f7" opacity="0.6" transform="rotate(144 32 32)"/>
 
-      {/* Tooth at bottom (dental element) */}
-      <path
-        d="M28 44 C28 42 26 42 26 44 L26 48 L30 48 L30 44 C30 42 28 42 28 44 Z"
-        fill="#10b981"
-      />
-      <path
-        d="M36 44 C36 42 34 42 34 44 L34 48 L38 48 L38 44 C38 42 36 42 36 44 Z"
-        fill="#10b981"
-      />
+      {/* Center Circle */}
+      <circle cx="32" cy="32" r="8" fill="#ec4899"/>
+      <circle cx="32" cy="32" r="6" fill="#ffffff"/>
+
+      {/* Decorative center dots */}
+      <circle cx="32" cy="30" r="1.5" fill="#ec4899"/>
+      <circle cx="30" cy="33" r="1.5" fill="#ec4899"/>
+      <circle cx="34" cy="33" r="1.5" fill="#ec4899"/>
     </svg>
   );
 };

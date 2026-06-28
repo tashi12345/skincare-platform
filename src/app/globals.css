@@ -4,13 +4,13 @@
   --background: #0a0a0a;
   --surface: #111111;
   --surface-hover: #1a1a1a;
-  --primary: #10b981;
-  --primary-glow: rgba(16, 185, 129, 0.3);
-  --secondary: #34d399;
-  /* Silver */
+  --primary: #ec4899;
+  --primary-glow: rgba(236, 72, 153, 0.3);
+  --secondary: #a855f7;
+  --secondary-glow: rgba(168, 85, 247, 0.3);
   --text-main: #ffffff;
   --text-muted: #a0a0a0;
-  --accent: #d4af37;
+  --accent: #f9a8d4;
   --border: rgba(255, 255, 255, 0.1);
   --glass: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
