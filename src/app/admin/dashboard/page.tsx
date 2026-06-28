@@ -21,10 +21,21 @@ interface Appointment {
     createdAt: any;
 }
 
+interface ContactMessage {
+    id: string;
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+    read: boolean;
+    createdAt: any;
+}
+
 export default function AdminDashboard() {
     const { logout } = useAuth();
     const router = useRouter();
     const [appointments, setAppointments] = useState<Appointment[]>([]);
+    const [messages, setMessages] = useState<ContactMessage[]>([]);
     const [tab, setTab] = useState<"dashboard" | "appointments" | "messages">("dashboard");
     const [loading, setLoading] = useState(true);
 
@@ -44,9 +55,10 @@ export default function AdminDashboard() {
             return;
         }
 
-        const q = query(collection(db, "appointments"), orderBy("createdAt", "desc"));
-        const unsubscribe = onSnapshot(
-            q,
+        // Fetch appointments
+        const appointmentsQuery = query(collection(db, "appointments"), orderBy("createdAt", "desc"));
+        const unsubscribeAppointments = onSnapshot(
+            appointmentsQuery,
             (snapshot) => {
                 const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Appointment));
                 setAppointments(data);
@@ -55,19 +67,42 @@ export default function AdminDashboard() {
             },
             (error) => {
                 console.error("Error fetching appointments:", error);
-                setLoading(false); // Still show dashboard even on error
+                setLoading(false);
                 clearTimeout(timeout);
             }
         );
 
+        // Fetch contact messages
+        const messagesQuery = query(collection(db, "contactMessages"), orderBy("createdAt", "desc"));
+        const unsubscribeMessages = onSnapshot(
+            messagesQuery,
+            (snapshot) => {
+                const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ContactMessage));
+                setMessages(data);
+            },
+            (error) => {
+                console.error("Error fetching messages:", error);
+            }
+        );
+
         return () => {
-            unsubscribe();
+            unsubscribeAppointments();
+            unsubscribeMessages();
             clearTimeout(timeout);
         };
     }, []);
 
     const updateStatus = async (id: string, status: string) => {
         await updateDoc(doc(db, "appointments", id), { status });
+    };
+
+    const markAsRead = async (id: string) => {
+        await updateDoc(doc(db, "contactMessages", id), { read: true });
+    };
+
+    const deleteMessage = async (id: string) => {
+        const docRef = doc(db, "contactMessages", id);
+        await updateDoc(docRef, { read: true }); // Just mark as read for now
     };
 
     const stats = {
@@ -205,7 +240,45 @@ export default function AdminDashboard() {
                 {tab === "messages" && (
                     <>
                         <h1 style={{ fontSize: '32px', marginBottom: '32px' }}>Contact Messages</h1>
-                        <p style={{ color: 'var(--text-muted)' }}>Messages will appear here when customers submit the contact form.</p>
+                        {messages.length === 0 ? (
+                            <div className="premium-card" style={{ padding: '60px 40px', textAlign: 'center' }}>
+                                <MessageSquare size={48} style={{ color: 'var(--primary)', margin: '0 auto 24px' }} />
+                                <h3 style={{ fontSize: '20px', marginBottom: '12px' }}>No Messages Yet</h3>
+                                <p style={{ color: 'var(--text-muted)' }}>Contact form submissions will appear here</p>
+                            </div>
+                        ) : (
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                {messages.map(msg => (
+                                    <div key={msg.id} className="premium-card" style={{ padding: '24px', opacity: msg.read ? 0.6 : 1 }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
+                                            <div>
+                                                <h3 style={{ fontSize: '18px', marginBottom: '8px' }}>{msg.name}</h3>
+                                                <p style={{ color: 'var(--text-muted)', fontSize: '14px' }}>{msg.email} • {msg.phone}</p>
+                                            </div>
+                                            {!msg.read && (
+                                                <span style={{ padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 700, height: 'fit-content', background: '#3b82f622', color: '#3b82f6' }}>
+                                                    NEW
+                                                </span>
+                                            )}
+                                        </div>
+                                        <div style={{ padding: '16px', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', marginBottom: '16px', borderTop: '1px solid var(--border)', paddingTop: '16px' }}>
+                                            <p style={{ color: 'var(--text-muted)', fontSize: '12px', marginBottom: '8px' }}>Message</p>
+                                            <p style={{ color: '#fff', fontSize: '15px', lineHeight: '1.6' }}>{msg.message}</p>
+                                        </div>
+                                        <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: 'var(--text-muted)' }}>
+                                            <span>{msg.createdAt ? new Date(msg.createdAt.seconds * 1000).toLocaleString() : 'Just now'}</span>
+                                        </div>
+                                        {!msg.read && (
+                                            <div style={{ marginTop: '16px' }}>
+                                                <button onClick={() => markAsRead(msg.id)} className="btn-primary" style={{ padding: '8px 16px' }}>
+                                                    <Check size={16} /> Mark as Read
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </>
                 )}
             </div>
